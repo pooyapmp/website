@@ -56,7 +56,15 @@ a:hover { text-decoration-thickness: 2px; }
   padding: 3rem 0 4rem;
 }
 
-/* Left rail: name, contact, navigation */
+/* Left rail: portrait, name, contact, navigation */
+.rail .portrait {
+  display: block;
+  width: 11rem;
+  height: auto;
+  margin: 0 0 1.5rem;
+  border-radius: 4px;
+  background: var(--rule);
+}
 .rail .name {
   margin: 0;
   font: 600 clamp(2.5rem, 6vw, 3.25rem) / 1 var(--serif);
@@ -106,7 +114,8 @@ a:hover { text-decoration-thickness: 2px; }
     gap: 4rem;
     padding-top: 4.5rem;
   }
-  .rail { position: sticky; top: 2rem; align-self: start; }
+  .rail { align-self: start; }
+  .rail .portrait { width: 13rem; }
   .nav ul { display: block; }
   .nav a {
     padding: 0.35rem 0 0.35rem 0.9rem;
@@ -115,6 +124,11 @@ a:hover { text-decoration-thickness: 2px; }
   }
   .nav a:hover { border-left-color: var(--ink); }
   .nav a[aria-current="page"] { border-left-color: var(--accent); }
+}
+
+/* Keep the left column pinned only when the screen is tall enough to show all of it */
+@media (min-width: 56rem) and (min-height: 56rem) {
+  .rail { position: sticky; top: 2rem; }
 }
 
 /* Main column */
