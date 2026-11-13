@@ -62,8 +62,6 @@ a:hover { text-decoration-thickness: 2px; }
   width: 11rem;
   height: auto;
   margin: 0 0 1.5rem;
-  border-radius: 4px;
-  background: var(--rule);
 }
 .rail { container-type: inline-size; }
 .rail .name {
@@ -202,7 +200,7 @@ a:hover { text-decoration-thickness: 2px; }
 .logo {
   flex: none;
   width: 7rem;
-  height: 4rem;
+  height: 5rem;
   object-fit: contain;
   object-position: left center;
 }
@@ -245,7 +243,7 @@ a:hover { text-decoration-thickness: 2px; }
 .docs.with-logos .what { flex: 1 1 11rem; min-width: 0; }
 .docs.with-logos .what + a,
 .docs.with-logos .what + .status { flex: none; }
-.logo-spacer { flex: none; width: 7rem; height: 4rem; }
+.logo-spacer { flex: none; width: 7rem; height: 5rem; }
 
 @media print {
   body { background: #fff; color: #000; font-size: 10.5pt; }
