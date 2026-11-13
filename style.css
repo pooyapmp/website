@@ -190,22 +190,37 @@ a:hover { text-decoration-thickness: 2px; }
 
 /* Education */
 .main ul.edu { list-style: none; padding-left: 0; }
-.main .edu li { display: flex; align-items: center; gap: 1rem; margin: 1rem 0; }
+.main .edu li { display: flex; align-items: center; gap: 1.25rem; margin: 1.25rem 0; }
+/* Logos have transparent backgrounds and sit directly on the page, without a frame */
 .edu-logo {
   flex: none;
-  width: 3.5rem;
-  height: 3.5rem;
-  padding: 0.35rem;
+  width: 9rem;
+  height: 5rem;
   object-fit: contain;
-  background: #fff;
-  border: 1px solid var(--rule);
-  border-radius: 4px;
+  object-position: left center;
+}
+.logo {
+  flex: none;
+  width: 7rem;
+  height: 4rem;
+  object-fit: contain;
+  object-position: left center;
+}
+/* Dark mode: the logos' dark lettering needs a light backing to stay readable */
+@media (prefers-color-scheme: dark) {
+  .edu-logo, .logo {
+    box-sizing: border-box;
+    padding: 0.4rem 0.6rem;
+    background: #eef2f6;
+    border-radius: 6px;
+    object-position: center;
+  }
 }
 .edu .degree { margin: 0; font-weight: 600; }
 .edu .school { margin: 0.1rem 0 0; color: var(--muted); }
 
 /* Document lists: certificates, references, samples */
-.docs { list-style: none; margin: 0; padding: 0; }
+.main ul.docs { list-style: none; margin: 0; padding: 0; }
 .main .docs li {
   display: flex;
   flex-wrap: wrap;
@@ -220,6 +235,17 @@ a:hover { text-decoration-thickness: 2px; }
 .docs .title { margin: 0; font-weight: 600; }
 .docs .meta { margin: 0.1rem 0 0; color: var(--muted); font-size: 0.95rem; }
 .docs .status { color: var(--muted); font-size: 0.95rem; }
+
+/* Certificates: institution logo on the left, link on the right */
+.main .docs.with-logos li {
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.5rem 1rem;
+}
+.docs.with-logos .what { flex: 1 1 11rem; min-width: 0; }
+.docs.with-logos .what + a,
+.docs.with-logos .what + .status { flex: none; }
+.logo-spacer { flex: none; width: 7rem; height: 4rem; }
 
 @media print {
   body { background: #fff; color: #000; font-size: 10.5pt; }
