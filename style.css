@@ -189,6 +189,7 @@ a:hover { text-decoration-thickness: 2px; }
 .timeline h3 { margin: 0; font: 600 1.1rem / 1.35 var(--sans); }
 .timeline .org { margin: 0.1rem 0 0; color: var(--muted); }
 .timeline .highlight { margin: 0.6rem 0 0; }
+.timeline .doc-link { margin: 0.4rem 0 0; font-size: 0.95rem; }
 @media (max-width: 40rem) {
   .main .timeline li { grid-template-columns: 1fr; }
 }
