@@ -253,6 +253,20 @@ a:hover { text-decoration-thickness: 2px; }
 .docs.with-logos .what + .status { flex: none; }
 .logo-spacer { flex: none; width: 7rem; height: 5rem; }
 
+/* Work samples: slide thumbnail on the left, description and link on the right */
+.main .docs.with-thumbs li { align-items: flex-start; justify-content: flex-start; gap: 1rem 1.5rem; }
+.docs.with-thumbs .thumb {
+  flex: none;
+  width: 13rem;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  background: #fff;
+}
+.docs.with-thumbs .what { flex: 1 1 16rem; min-width: 0; }
+.docs .links { margin: 0.6rem 0 0; }
 @media print {
   body { background: #fff; color: #000; font-size: 10.5pt; }
   .nav, .noprint { display: none; }
