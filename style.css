@@ -149,10 +149,24 @@ a:hover { text-decoration-thickness: 2px; }
   font: 600 1.55rem / 1.2 var(--serif);
   letter-spacing: -0.01em;
 }
-.main section + section {
+.main section + section,
+.main .lede + section {
+  position: relative;
   margin-top: 2.75rem;
-  padding-top: 2rem;
-  border-top: 1px solid var(--rule);
+  padding-top: 2.25rem;
+}
+/* A faint ripple line between sections, a quiet nod to rowing */
+.main section + section::before,
+.main .lede + section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 8px;
+  background: var(--rule);
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='8' viewBox='0 0 32 8'%3E%3Cpath d='M0 4 Q8 0 16 4 T32 4' fill='none' stroke='black' stroke-width='1.3'/%3E%3C/svg%3E") repeat-x left center / 32px 8px;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='8' viewBox='0 0 32 8'%3E%3Cpath d='M0 4 Q8 0 16 4 T32 4' fill='none' stroke='black' stroke-width='1.3'/%3E%3C/svg%3E") repeat-x left center / 32px 8px;
 }
 .lede { margin: 0; font-size: 1.125rem; line-height: 1.65; }
 .intro { margin: 0 0 2rem; color: var(--muted); }
@@ -224,8 +238,8 @@ a:hover { text-decoration-thickness: 2px; }
     object-position: center;
   }
 }
-.edu .degree { margin: 0; font-weight: 600; }
-.edu .school { margin: 0.1rem 0 0; color: var(--muted); }
+.edu .school { margin: 0; font-weight: 600; }
+.edu .degree { margin: 0.1rem 0 0; }
 
 /* Document lists: certificates, references, samples */
 .main ul.docs { list-style: none; margin: 0; padding: 0; }
@@ -269,6 +283,28 @@ a:hover { text-decoration-thickness: 2px; }
 }
 .docs.with-thumbs .what { flex: 1 1 16rem; min-width: 0; }
 .docs .links { margin: 0.6rem 0 0; }
+/* Rowing page: photo grid */
+.main ul.gallery {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(13rem, 1fr));
+  gap: 1rem;
+}
+.main .gallery li { margin: 0; }
+.gallery figure { margin: 0; }
+.gallery img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  border-radius: 4px;
+  border: 1px solid var(--rule);
+}
+.gallery figcaption { margin-top: 0.4rem; color: var(--muted); font-size: 0.9rem; }
+
 @media print {
   body { background: #fff; color: #000; font-size: 10.5pt; }
   .nav, .noprint { display: none; }
