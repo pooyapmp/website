@@ -156,6 +156,8 @@ a:hover { text-decoration-thickness: 2px; }
 }
 .lede { margin: 0; font-size: 1.125rem; line-height: 1.65; }
 .intro { margin: 0 0 2rem; color: var(--muted); }
+.main ul.facts { margin: 1.1rem 0 0; color: var(--muted); }
+.main .facts li { margin: 0.25rem 0; }
 
 .main ul { padding-left: 1.1rem; }
 .main li { margin: 0.4rem 0; }
